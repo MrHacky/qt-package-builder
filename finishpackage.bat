@@ -12,6 +12,8 @@ pushd Package\include
 for /f "delims=" %%D in ('dir /ad /b /s ^| sort /r') DO @rmdir "%%D"
 popd
 
+xcopy /e /y Package\lib\cmake\install Package\lib\cmake
+
 move Package "%1"
 
 "%S7Z%" a "%1.7z" "%1"
